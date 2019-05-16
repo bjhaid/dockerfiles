@@ -10,8 +10,9 @@ RUN apt-get update \
           libx11-xcb1 \
           libxkbfile1 \
           libcanberra-gtk-module \
+          libasound2 \
       && wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.0-amd64.deb \
-      && apt install -y ./slack-desktop-3.4.0-amd64.deb libasound2 \
+      && apt install -y ./slack-desktop-3.4.0-amd64.deb \
       && useradd --create-home --uid ${ID} --shell /bin/bash ${USERNAME}
 
 USER ${USERNAME}
