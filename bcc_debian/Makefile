@@ -1,4 +1,6 @@
 KERNEL_VERSION ?= $(shell uname -r)
+.PHONY: default
+default: build
 
 stop:
 	docker rm -fv bcc || /bin/true
@@ -21,6 +23,3 @@ shell: build stop
 		bash
 
 run: shell
-
-.PHONY = default
-default: build

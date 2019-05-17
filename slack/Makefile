@@ -1,4 +1,7 @@
 ID ?= $(shell id --user)
+.PHONY: default
+default: build
+
 build:
 	docker build \
 		--build-arg USERNAME=${USER} \

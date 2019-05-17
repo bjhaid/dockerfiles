@@ -1,4 +1,7 @@
 ID ?= $(shell id --user)
+.PHONY: default
+default: build
+
 build:
 	docker build \
 		--build-arg USERNAME=${USER} \
@@ -28,6 +31,3 @@ run: build stop
 		--cpus 1 \
 		--name zoom \
 		zoom
-
-.PHONY = default
-default: build
